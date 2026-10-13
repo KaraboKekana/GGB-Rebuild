@@ -25,6 +25,7 @@ body{
     position:sticky;
     top:0;
     z-index:1000;
+    border-bottom:3px solid #b39658;
 }
 
 .logo img {
@@ -370,6 +371,7 @@ color:#f4d47c;
     color:white;
     text-align:center;
     padding:50px 20px;
+    border-top:4px solid #b39658;
 }
 
 .footer h3{
