@@ -678,3 +678,348 @@ color:#f4d47c;
     font-weight:bold;
 }
 
+
+.rg {
+  --rg-maroon: #8b1e3f;
+  --rg-maroon-dark: #5a1229;
+  --rg-gold: #b39658;
+  --rg-text: #2b2b2b;
+  --rg-tint: #faf6f1;
+  color: var(--rg-text);
+  line-height: 1.7;
+}
+
+.rg-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.rg h1,
+.rg h2,
+.rg h3 {
+  color: var(--rg-maroon);
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+
+.rg h2 { font-size: 1.9rem; }
+
+.rg-section { padding: 64px 0; }
+.rg-tint    { background: var(--rg-tint); }
+
+.rg-intro {
+  max-width: 62ch;
+  margin-bottom: 32px;
+}
+
+/* ---------- Hero ---------- */
+.rg-hero {
+  background: linear-gradient(135deg, var(--rg-maroon), var(--rg-maroon-dark));
+  color: #fff;
+  text-align: center;
+  padding: 90px 0;
+}
+
+.rg-hero h1 {
+  color: #fff;
+  font-size: 3rem;
+}
+
+.rg-lead {
+  max-width: 56ch;
+  margin: 0 auto 32px;
+  font-size: 1.2rem;
+}
+
+.rg-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.rg-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.rg-btn-gold  { background: var(--rg-gold); color: #fff; }
+.rg-btn-light { background: #fff; color: var(--rg-maroon); }
+
+.rg-btn:hover,
+.rg-btn:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
+}
+
+/* ---------- Two columns (intro) ---------- */
+.rg-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+/* ---------- Warning signs ---------- */
+.rg-signs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 40px;
+}
+
+.rg-signs li {
+  border-left: 4px solid var(--rg-gold);
+  padding-left: 16px;
+}
+
+/* ---------- Myths and facts ---------- */
+.rg-mf {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 28px 0;
+  border-top: 1px solid var(--rg-gold);
+}
+
+.rg-mf h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.rg-fact h3 { color: var(--rg-text); }
+.rg-mf p { margin: 0; }
+
+/* ---------- Tips ---------- */
+.rg-tips {
+  margin: 0;
+  padding-left: 22px;
+  max-width: 62ch;
+}
+
+.rg-tips li { margin-bottom: 10px; }
+.rg-tips li::marker { color: var(--rg-gold); }
+
+/* ---------- Help banner ---------- */
+.rg-help {
+  background: var(--rg-maroon);
+  color: #fff;
+  text-align: center;
+  padding: 72px 0;
+}
+
+.rg-help h2 { color: #fff; }
+
+.rg-number {
+  display: inline-block;
+  margin: 16px 0 24px;
+  font-size: 3.4rem;
+  font-weight: 700;
+  color: var(--rg-gold);
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.rg-number:hover,
+.rg-number:focus-visible { text-decoration: underline; }
+
+.rg-self a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ---------- Partners ---------- */
+.rg-partners {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.rg-partners img { max-height: 90px; width: auto; }
+
+/* ---------- Phones and small tablets ---------- */
+@media (max-width: 700px) {
+  .rg-two-col,
+  .rg-signs,
+  .rg-mf { grid-template-columns: 1fr; gap: 24px; }
+
+  .rg-hero h1    { font-size: 2.2rem; }
+  .rg-number     { font-size: 2.4rem; }
+  .rg-section    { padding: 48px 0; }
+}
+
+
+/* ============================================================
+   RESPONSIBLE GAMBLING HERO: text on the left, picture on the right
+   Paste this at the very BOTTOM of css/style.css.
+   It comes after the older hero rules, so it overrides them.
+============================================================= */
+
+.rg-hero {
+  text-align: left;
+  padding: 72px 0;
+}
+
+.rg-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.rg-hero .rg-lead {
+  margin: 0 0 24px;
+  max-width: 52ch;
+}
+
+/* The italic phrase that replaces the two buttons */
+.rg-hero-note {
+  margin: 0;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.rg-hero-note a {
+  color: #e6cf94;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.rg-hero-note a:hover,
+.rg-hero-note a:focus-visible {
+  color: #fff;
+}
+
+/* The picture on the right */
+.rg-hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 8px;
+  border-bottom: 4px solid var(--rg-gold);
+}
+
+/* Phones and small tablets: stack the picture under the text */
+@media (max-width: 700px) {
+  .rg-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+
+
+/* ============================================================
+   RESPONSIBLE GAMBLING HERO, VERSION 3
+   Original sizes restored, gentle animations kept.
+   This REPLACES the version 2 block at the bottom of css/style.css.
+============================================================= */
+
+/* ---------- Original sizes ---------- */
+.rg-hero {
+  padding: 72px 0;
+  overflow: hidden;            /* stops the sliding picture causing a scrollbar */
+}
+
+.rg-hero .rg-wrap {
+  max-width: 1000px;
+}
+
+.rg-hero-grid {
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+}
+
+.rg-hero h1 {
+  font-size: 3rem;
+  animation: rg-rise 0.9s ease-out both;
+}
+
+/* Gold line that draws itself under the title */
+.rg-hero h1::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100px;
+  margin-top: 16px;
+  background: var(--rg-gold);
+  border-radius: 3px;
+  animation: rg-draw 1.1s ease-out 0.6s both;
+}
+
+.rg-hero .rg-lead {
+  font-size: 1.2rem;
+  animation: rg-rise 0.9s ease-out 0.25s both;
+}
+
+.rg-hero-note {
+  animation: rg-rise 0.9s ease-out 0.45s both;
+}
+
+/* ---------- The picture: original size, slow zoom kept ---------- */
+.rg-hero-image {
+  overflow: hidden;                         /* keeps the zoom inside the frame */
+  border-radius: 8px;
+  border-bottom: 4px solid var(--rg-gold);
+  animation: rg-slide-in 1s ease-out 0.2s both;
+}
+
+.rg-hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 0;
+  border-bottom: none;
+  animation: rg-zoom 16s ease-in-out infinite alternate;
+}
+
+/* ---------- Animations ---------- */
+@keyframes rg-rise {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes rg-draw {
+  from { width: 0; }
+  to   { width: 100px; }
+}
+
+@keyframes rg-slide-in {
+  from { opacity: 0; transform: translateX(48px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes rg-zoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.12); }
+}
+
+/* ---------- Phones and small tablets ---------- */
+@media (max-width: 700px) {
+  .rg-hero { padding: 56px 0; }
+
+  .rg-hero h1 { font-size: 2.2rem; }
+
+  .rg-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* ---------- Respect people who turn animations off ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .rg-hero h1,
+  .rg-hero h1::after,
+  .rg-hero .rg-lead,
+  .rg-hero-note,
+  .rg-hero-image,
+  .rg-hero-image img {
+    animation: none;
+  }
+}
