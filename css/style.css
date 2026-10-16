@@ -1023,3 +1023,106 @@ color:#f4d47c;
     animation: none;
   }
 }
+
+/* ============================================================
+   RESPONSIBLE GAMBLING, ROUND 2
+   1) Hero lines up with the logo and menu
+   2) Quick-facts strip
+   3) Warning signs as cards
+   Paste at the very BOTTOM of css/style.css.
+============================================================= */
+
+/* ---------- 1) Line up with the logo and menu ---------- */
+.rg-hero .rg-wrap,
+.rg-quick .rg-wrap {
+  max-width: none;
+  /* If the left edge doesn't match your logo exactly, change 4.2vw and 80px */
+  padding: 0 clamp(24px, 4.2vw, 60px);
+}
+
+/* ---------- 2) Quick-facts strip (overlaps the hero) ---------- */
+.rg-quick {
+  position: relative;
+  z-index: 2;
+  margin-top: -48px;
+}
+
+.rg-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #fff;
+  border-top: 4px solid var(--rg-gold);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+
+.rg-quick-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 28px 32px;
+}
+
+.rg-quick-item + .rg-quick-item {
+  border-left: 1px solid #eadfc9;
+}
+
+.rg-quick-item strong {
+  font-size: 1.9rem;
+  line-height: 1.1;
+  color: var(--rg-maroon);
+}
+
+.rg-quick-item span {
+  color: #555;
+}
+
+.rg-quick + .rg-section {
+  padding-top: 72px;
+}
+
+/* ---------- 3) Warning signs as cards (same HTML, new look) ---------- */
+.rg-signs {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.rg-signs li {
+  background: #fff;
+  border-left: none;
+  border-top: 4px solid var(--rg-gold);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.rg-signs li:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(139, 30, 63, 0.16);
+}
+
+/* ---------- Tablets ---------- */
+@media (max-width: 960px) {
+  .rg-signs { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 700px) {
+  .rg-quick { margin-top: -28px; }
+
+  .rg-quick-grid { grid-template-columns: 1fr; }
+
+  .rg-quick-item + .rg-quick-item {
+    border-left: none;
+    border-top: 1px solid #eadfc9;
+  }
+
+  .rg-signs { grid-template-columns: 1fr; }
+}
+
+/* ---------- Respect people who turn animations off ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .rg-signs li { transition: none; }
+  .rg-signs li:hover { transform: none; }
+}
