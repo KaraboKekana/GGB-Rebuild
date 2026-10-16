@@ -338,7 +338,15 @@ color:#f4d47c;
 .contact-strip{
     text-align:center;
     padding:80px 20px;
-    background:white;
+    background:
+        linear-gradient(rgba(90, 18, 41, 0.45), rgba(90, 18, 41, 0.45)),
+        url("../images/poker_darkened.jpg") center / cover no-repeat;
+    color:white;
+}
+
+.contact-strip h2,
+.contact-strip p{
+    color:white;
 }
 
 .contact-strip h2{
@@ -1191,4 +1199,21 @@ color:#f4d47c;
     animation: none;
     transition: none;
   }
+}
+
+/* Make the contact strip text clearly readable on the picture */
+.contact-strip{
+    background:
+        linear-gradient(rgba(40, 8, 20, 0.65), rgba(40, 8, 20, 0.65)),
+        url("../images/poker_darkened.jpg") center / cover no-repeat;
+}
+
+.contact-strip h2{
+    color:#ffffff;
+    text-shadow:0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.contact-strip p{
+    color:#f5ecef;
+    text-shadow:0 1px 8px rgba(0, 0, 0, 0.5);
 }
