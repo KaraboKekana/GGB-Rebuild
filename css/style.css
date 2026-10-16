@@ -1217,3 +1217,41 @@ color:#f4d47c;
     color:#f5ecef;
     text-shadow:0 1px 8px rgba(0, 0, 0, 0.5);
 }
+
+/* Partner logos: identical frames, logos centred inside */
+.rg-partners {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 32px;
+}
+
+.rg-partners img {
+  box-sizing: border-box;
+  width: 300px;
+  height: 200px;
+  max-height: none;
+  padding: 16px;
+  object-fit: contain;          /* shows the whole logo, never stretched */
+  background: #fff;
+  border: 1px solid #eadfc9;
+  border-top: 4px solid #b39658;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 700px) {
+  .rg-partners img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Centre the whole partners section */
+.rg-wrap:has(> .rg-partners) {
+  text-align: center;
+}
+
+.rg-partners {
+  justify-content: center;
+}
