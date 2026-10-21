@@ -1604,3 +1604,100 @@ color:#f4d47c;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+/* ============================================================
+   OUR MANDATE: seal on the left, list with gold icons on the right
+   Paste at the very BOTTOM of css/style.css.
+============================================================= */
+
+.rg-mandate {
+  border-top: 1px solid #eadfc9;
+}
+
+.rg-mandate-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* The seal, with two thin gold rings echoing the old graphic */
+.rg-mandate-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.rg-seal {
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid var(--rg-gold);
+  box-shadow:
+    0 0 0 10px #fff,
+    0 0 0 12px rgba(179, 150, 88, 0.6),
+    0 0 0 26px #fff,
+    0 0 0 28px rgba(179, 150, 88, 0.3);
+}
+
+.rg-seal img {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
+/* The list */
+.rg-mandate-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rg-mandate-list li {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.rg-mandate-list li:last-child {
+  margin-bottom: 0;
+}
+
+.rg-mandate-icon {
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rg-mandate-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: var(--rg-gold);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Phones and tablets: seal above the list */
+@media (max-width: 800px) {
+  .rg-mandate-grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .rg-seal {
+    width: 180px;
+    height: 180px;
+  }
+
+  .rg-seal img { width: 120px; }
+}
