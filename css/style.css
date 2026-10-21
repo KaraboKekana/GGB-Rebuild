@@ -1878,3 +1878,102 @@ color:#f4d47c;
     transition: none;
   }
 }
+
+/* ============================================================
+   MYTHS AND FACTS: pointing-finger Fact button, slide down and up
+   Paste at the very BOTTOM of css/style.css.
+   (Keep the earlier "gold side line" CSS: this builds on it.)
+============================================================= */
+
+/* ---------- The Fact button ---------- */
+.rg-factbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 20px;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #7a6130;                    /* dark gold: easy to read on white */
+  background: none;
+  border: 1.5px solid var(--rg-gold);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.rg-factbtn:hover,
+.rg-factbtn[aria-expanded="true"] {
+  background: var(--rg-gold);
+  color: #fff;
+}
+
+.rg-factbtn:focus-visible {
+  outline: 3px solid var(--rg-maroon);
+  outline-offset: 2px;
+}
+
+.rg-factbtn svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: rg-nudge 1.6s ease-in-out infinite;   /* the finger gently taps */
+}
+
+.rg-factbtn[aria-expanded="true"] svg {
+  animation: none;
+}
+
+@keyframes rg-nudge {
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(3px); }
+}
+
+/* ---------- The panel that slides down and up ---------- */
+.rg-factpanel {
+  display: grid;
+  grid-template-rows: 0fr;           /* closed */
+  transition: grid-template-rows 0.4s ease;
+}
+
+.rg-factpanel.open {
+  grid-template-rows: 1fr;           /* open */
+}
+
+.rg-factpanel > div {
+  overflow: hidden;
+  visibility: hidden;                /* hidden from tabbing and screen readers when closed */
+  transition: visibility 0s linear 0.4s;
+}
+
+.rg-factpanel.open > div {
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.rg-factpanel p {
+  margin: 14px 0 0;
+  padding: 14px 18px;
+  line-height: 1.7;
+  color: var(--rg-text);
+  background: var(--rg-tint);
+  border-left: 3px solid var(--rg-maroon);
+  border-radius: 0 8px 8px 0;
+}
+
+/* People who prefer less motion get no animation */
+@media (prefers-reduced-motion: reduce) {
+  .rg-factbtn svg { animation: none; }
+  .rg-factpanel,
+  .rg-factpanel > div { transition: none; }
+}
+
+/* Smaller text in Myths and facts */
+.rg-item-label  { font-size: 0.72rem; }
+.rg-item-myth   { font-size: 1.05rem; }
+.rg-factbtn     { font-size: 0.85rem; padding: 7px 16px; }
+.rg-factpanel p { font-size: 0.92rem; }

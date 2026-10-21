@@ -252,38 +252,85 @@
   </section>
 
 
-
+    <!-- 4. MYTHS AND FACTS (tap the Fact button to slide the answer open and closed) -->
   <section class="rg-section">
     <div class="rg-wrap">
-      <h2>Myths and facts</h2>
+      <h2>Myths and Facts</h2>
 
       <div class="rg-items">
 
         <div class="rg-item">
           <p class="rg-item-label">MYTH</p>
           <p class="rg-item-myth">Some slot machines are "hot" and due for a big jackpot.</p>
-          <p class="rg-item-fact">Every spin is random, decided by a random number generator
-             (RNG). A machine is no more likely to pay out after a losing streak than
-             after a win.</p>
+
+          <button type="button" class="rg-factbtn" aria-expanded="false" aria-controls="rg-fact-1">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 14a8 8 0 0 1-8 8"/><path d="M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1"/><path d="M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v10"/><path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
+            <span class="rg-factbtn-text">Fact</span>
+          </button>
+
+          <div class="rg-factpanel" id="rg-fact-1">
+            <div>
+              <p>Every spin is random, decided by a random number generator (RNG).
+                 A machine is no more likely to pay out after a losing streak than
+                 after a win.</p>
+            </div>
+          </div>
         </div>
 
         <div class="rg-item">
           <p class="rg-item-label">MYTH</p>
           <p class="rg-item-myth">If I keep playing, I'll win my money back.</p>
-          <p class="rg-item-fact">Every bet is independent, and the odds don't change because
-             you have lost. Chasing losses usually means losing more.</p>
+
+          <button type="button" class="rg-factbtn" aria-expanded="false" aria-controls="rg-fact-2">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 14a8 8 0 0 1-8 8"/><path d="M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1"/><path d="M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v10"/><path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
+            <span class="rg-factbtn-text">Fact</span>
+          </button>
+
+          <div class="rg-factpanel" id="rg-fact-2">
+            <div>
+              <p>Every bet is independent, and the odds don't change because you
+                 have lost. Chasing losses usually means losing more.</p>
+            </div>
+          </div>
         </div>
 
         <div class="rg-item">
           <p class="rg-item-label">MYTH</p>
           <p class="rg-item-myth">Gambling is a good way to fix money problems.</p>
-          <p class="rg-item-fact">Gambling is entertainment, and the odds always favour the
-             house. Never gamble money you need for rent, food, school fees or bills.</p>
+
+          <button type="button" class="rg-factbtn" aria-expanded="false" aria-controls="rg-fact-3">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 14a8 8 0 0 1-8 8"/><path d="M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1"/><path d="M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v10"/><path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
+            <span class="rg-factbtn-text">Fact</span>
+          </button>
+
+          <div class="rg-factpanel" id="rg-fact-3">
+            <div>
+              <p>Gambling is entertainment, and the odds always favour the house.
+                 Never gamble money you need for rent, food, school fees or bills.</p>
+            </div>
+          </div>
         </div>
 
       </div>
     </div>
+
+    <script>
+      (function () {
+        document.querySelectorAll('.rg-factbtn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var panel = document.getElementById(btn.getAttribute('aria-controls'));
+            var opening = btn.getAttribute('aria-expanded') !== 'true';
+
+            btn.setAttribute('aria-expanded', opening ? 'true' : 'false');
+            panel.classList.toggle('open', opening);
+            btn.querySelector('.rg-factbtn-text').textContent = opening ? 'Hide fact' : 'Fact';
+          });
+        });
+      })();
+    </script>
   </section>
+
+
 
     <!-- 6. HELP BANNER -->
   <section class="rg-help">
