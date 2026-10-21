@@ -1561,3 +1561,46 @@ color:#f4d47c;
     url("../images/poker_darkened.jpg") center / cover no-repeat;
 }
 
+/* ============================================================
+   STAY IN CONTROL: one column, a gold icon beside each tip
+   Paste at the very BOTTOM of css/style.css.
+============================================================= */
+
+.rg-icontips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 680px;
+}
+
+.rg-icontips li {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.rg-icontips li:last-child {
+  margin-bottom: 0;
+}
+
+.rg-tip-icon {
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rg-tip-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: var(--rg-gold);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
