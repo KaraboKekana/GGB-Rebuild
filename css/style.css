@@ -1701,3 +1701,180 @@ color:#f4d47c;
 
   .rg-seal img { width: 120px; }
 }
+
+/* ============================================================
+   OUR MANDATE: large gold rings with a slideshow inside
+   Paste at the very BOTTOM of css/style.css.
+============================================================= */
+
+.rg-mandate-grid {
+  grid-template-columns: 1fr 1.5fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.rg-mandate-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------- The large gold rings ---------- */
+.rg-rings {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  margin: 40px 0 34px;
+  border-radius: 50%;
+  border: 2px solid var(--rg-gold);
+  box-shadow:
+    0 0 0 14px #fff,
+    0 0 0 16px rgba(179, 150, 88, 0.6),
+    0 0 0 32px #fff,
+    0 0 0 34px rgba(179, 150, 88, 0.3);
+}
+
+/* Each icon sits in the middle and fades in and out */
+.rg-ring-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.rg-ring-icon.on {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.rg-ring-icon svg {
+  width: 120px;
+  height: 120px;
+  fill: none;
+  stroke: var(--rg-gold);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Caption and dots under the rings */
+.rg-mcap {
+  min-height: 3em;
+  max-width: 280px;
+  margin: 0;
+  text-align: center;
+  font-weight: 600;
+  color: var(--rg-maroon);
+}
+
+.rg-mdots {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.rg-mdots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(179, 150, 88, 0.35);
+  transition: background 0.3s ease;
+}
+
+.rg-mdots span.on {
+  background: var(--rg-gold);
+}
+
+/* ---------- The list on the right ---------- */
+.rg-mlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rg-mitem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 11px 0 11px 14px;
+  background: none;
+  border: none;
+  border-left: 3px solid transparent;
+  font: inherit;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  text-align: left;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.rg-mitem:hover {
+  color: var(--rg-text);
+}
+
+.rg-mitem:focus-visible {
+  outline: 2px solid var(--rg-gold);
+  outline-offset: 2px;
+}
+
+.rg-mitem.on {
+  color: var(--rg-text);
+  font-weight: 600;
+  border-left-color: var(--rg-gold);
+}
+
+.rg-mitem-icon {
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  opacity: 0.55;
+  transition: opacity 0.3s ease;
+}
+
+.rg-mitem.on .rg-mitem-icon {
+  opacity: 1;
+}
+
+.rg-mitem-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: var(--rg-gold);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- Tablets and phones: rings above the list ---------- */
+@media (max-width: 800px) {
+  .rg-mandate-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .rg-rings {
+    width: 200px;
+    height: 200px;
+  }
+
+  .rg-ring-icon svg {
+    width: 92px;
+    height: 92px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rg-ring-icon,
+  .rg-mdots span,
+  .rg-mitem,
+  .rg-mitem-icon {
+    transition: none;
+  }
+}
