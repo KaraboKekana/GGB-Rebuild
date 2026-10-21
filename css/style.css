@@ -1361,3 +1361,89 @@ color:#f4d47c;
   .rg-quick-item { transition: none; }
   .rg-quick-item:hover { transform: none; }
 }
+
+
+/* ============================================================
+   MYTHS AND FACTS: plain bullet list
+   Paste at the very BOTTOM of css/style.css.
+============================================================= */
+
+.rg-points {
+  max-width: 70ch;
+  margin: 0;
+  padding-left: 24px;
+}
+
+.rg-points > li {
+  margin-bottom: 22px;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.rg-points li::marker {
+  color: var(--rg-gold);
+}
+
+.rg-points ul {
+  margin: 8px 0 0;
+  padding-left: 24px;
+  list-style: circle;
+}
+
+.rg-points ul li {
+  font-size: 1rem;
+}
+
+.rg-points strong {
+  color: var(--rg-maroon);
+}
+
+
+/* ============================================================
+   MYTHS AND FACTS, OPTION C: gold side line
+   Paste at the very BOTTOM of css/style.css.
+============================================================= */
+
+.rg-items {
+  max-width: 760px;
+}
+
+.rg-item {
+  margin: 0 0 30px;
+  padding: 4px 0 4px 22px;
+  border-left: 4px solid var(--rg-gold);
+  transition: border-color 0.25s ease;
+}
+
+.rg-item:hover {
+  border-left-color: var(--rg-maroon);
+}
+
+.rg-item p {
+  margin: 0;
+}
+
+.rg-item-label {
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #8a6f3a;                /* a darker gold, easier to read on white */
+}
+
+.rg-item-myth {
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--rg-text);
+}
+
+.rg-item-fact {
+  line-height: 1.7;
+  color: var(--rg-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rg-item { transition: none; }
+}
