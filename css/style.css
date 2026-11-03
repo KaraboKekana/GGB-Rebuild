@@ -2426,3 +2426,54 @@ color:#f4d47c;
     height: 180px;
   }
 }
+
+/* ============================================================
+   RESPONSIBLE GAMBLING HERO: white background
+   Paste at the very BOTTOM of css/style.css.
+   It overrides the earlier maroon hero, so don't delete that.
+============================================================= */
+
+.rg-hero {
+  background: #fff;
+  color: var(--rg-text);
+  padding-bottom: 72px;          /* was 120px, the overlap is no longer needed */
+}
+
+/* The title, now maroon so it shows on white */
+.rg-hero h1 {
+  color: var(--rg-maroon);
+}
+
+.rg-hero .rg-lead {
+  color: var(--rg-text);
+}
+
+/* The italic line and its links */
+.rg-hero-note {
+  color: var(--rg-text);
+}
+
+.rg-hero-note a {
+  color: var(--rg-maroon);
+  text-decoration: underline;
+  text-decoration-color: var(--rg-gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.rg-hero-note a:hover,
+.rg-hero-note a:focus-visible {
+  color: var(--rg-maroon-dark);
+}
+
+/* The three quick-facts cards now sit below the hero instead of overlapping it */
+.rg-quick {
+  margin-top: 0;
+}
+
+/* Phones */
+@media (max-width: 700px) {
+  .rg-hero {
+    padding-bottom: 48px;
+  }
+}
