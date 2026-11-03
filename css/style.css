@@ -2221,3 +2221,208 @@ color:#f4d47c;
     transition: none;
   }
 }
+
+/* ============================================================
+   CONTACT PAGE EXTRAS: Who can help, Find us (map), Common questions
+   Paste at the very BOTTOM of css/style.css.
+============================================================= */
+
+/* ---------- Who can help ---------- */
+.ct-help-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px 56px;
+}
+
+.ct-help-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding-top: 22px;
+  border-top: 1px solid var(--rg-gold);
+}
+
+.ct-help-item h3 {
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+}
+
+.ct-help-item p {
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+
+/* A text button that looks like a link */
+.ct-link {
+  padding: 0;
+  font: inherit;
+  font-weight: 600;
+  color: var(--rg-maroon);
+  background: none;
+  border: none;
+  border-bottom: 2px solid var(--rg-gold);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.ct-link:hover,
+.ct-link:focus-visible {
+  color: var(--rg-maroon-dark);
+  border-bottom-color: var(--rg-maroon);
+}
+
+/* ---------- Map ---------- */
+.ct-map {
+  margin: 0 0 24px;
+  overflow: hidden;
+  border-radius: 12px;
+  border-bottom: 4px solid var(--rg-gold);
+  box-shadow: 0 12px 36px rgba(60, 10, 25, 0.14);
+}
+
+.ct-map iframe {
+  display: block;
+  width: 100%;
+  height: 400px;
+  border: 0;
+}
+
+.ct-btn {
+  display: inline-block;
+  padding: 13px 28px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  background: var(--rg-maroon);
+  border-radius: 8px;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.ct-btn:hover,
+.ct-btn:focus-visible {
+  background: var(--rg-maroon-dark);
+  transform: translateY(-2px);
+}
+
+/* ---------- Common questions ---------- */
+.ct-faq {
+  max-width: 760px;
+}
+
+.ct-faq-item {
+  border-bottom: 1px solid #eadfc9;
+}
+
+.ct-faq-item:first-child {
+  border-top: 1px solid #eadfc9;
+}
+
+.ct-faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 18px 0;
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: left;
+  color: var(--rg-maroon);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.ct-faq-q:hover {
+  color: var(--rg-maroon-dark);
+}
+
+.ct-faq-q:focus-visible {
+  outline: 3px solid var(--rg-gold);
+  outline-offset: 2px;
+}
+
+.ct-faq-q svg {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--rg-gold);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.35s ease;
+}
+
+.ct-faq-q[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+/* The answer slides down and up */
+.ct-faq-a {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease;
+}
+
+.ct-faq-a.open {
+  grid-template-rows: 1fr;
+}
+
+.ct-faq-a > div {
+  overflow: hidden;
+  visibility: hidden;
+  transition: visibility 0s linear 0.4s;
+}
+
+.ct-faq-a.open > div {
+  visibility: visible;
+  transition-delay: 0s;F
+}
+
+.ct-faq-a p {
+  margin: 0;
+  padding: 0 0 20px;
+  line-height: 1.7;
+}
+
+/* ---------- Tablets and phones ---------- */
+@media (max-width: 800px) {
+  .ct-help-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .ct-map iframe { height: 300px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ct-faq-q svg,
+  .ct-faq-a,
+  .ct-faq-a > div,
+  .ct-btn,
+  .ct-link {
+    transition: none;
+  }
+}
+
+/* ============================================================
+   CONTACT MAP SIZE
+   Paste at the very BOTTOM of css/style.css, then change the numbers.
+============================================================= */
+
+.ct-map {
+  max-width: 400px;        /* how wide the map is. Use 100% for the full width */
+}
+
+.ct-map iframe {
+  height: 180px;           /* how tall the map is */
+}
+
+/* Phones */
+@media (max-width: 800px) {
+  .ct-map iframe {
+    height: 180px;
+  }
+}
