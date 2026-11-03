@@ -2477,3 +2477,10 @@ color:#f4d47c;
     padding-bottom: 48px;
   }
 }
+
+/* Bigger logo, menu bar height stays the same */
+.navbar .logo img {
+  height: 110px;
+  width: auto;
+  margin: -13px 0;
+}
