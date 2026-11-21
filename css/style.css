@@ -338,7 +338,15 @@ color:#f4d47c;
 .contact-strip{
     text-align:center;
     padding:80px 20px;
-    background:white;
+    background:
+        linear-gradient(rgba(90, 18, 41, 0.45), rgba(90, 18, 41, 0.45)),
+        url("../images/poker_darkened.jpg") center / cover no-repeat;
+    color:white;
+}
+
+.contact-strip h2,
+.contact-strip p{
+    color:white;
 }
 
 .contact-strip h2{
@@ -678,6 +686,1804 @@ color:#f4d47c;
     font-weight:bold;
 }
 
+
+.rg {
+  --rg-maroon: #8b1e3f;
+  --rg-maroon-dark: #5a1229;
+  --rg-gold: #b39658;
+  --rg-text: #2b2b2b;
+  --rg-tint: #faf6f1;
+  color: var(--rg-text);
+  line-height: 1.7;
+}
+
+.rg-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.rg h1,
+.rg h2,
+.rg h3 {
+  color: var(--rg-maroon);
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+
+.rg h2 { font-size: 1.9rem; }
+
+.rg-section { padding: 64px 0; }
+.rg-tint    { background: var(--rg-tint); }
+
+.rg-intro {
+  max-width: 62ch;
+  margin-bottom: 32px;
+}
+
+/* ---------- Hero ---------- */
+.rg-hero {
+  background: linear-gradient(135deg, var(--rg-maroon), var(--rg-maroon-dark));
+  color: #fff;
+  text-align: center;
+  padding: 90px 0;
+}
+
+.rg-hero h1 {
+  color: #fff;
+  font-size: 3rem;
+}
+
+.rg-lead {
+  max-width: 56ch;
+  margin: 0 auto 32px;
+  font-size: 1.2rem;
+}
+
+.rg-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.rg-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.rg-btn-gold  { background: var(--rg-gold); color: #fff; }
+.rg-btn-light { background: #fff; color: var(--rg-maroon); }
+
+.rg-btn:hover,
+.rg-btn:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.6);
+  outline-offset: 2px;
+}
+
+/* ---------- Two columns (intro) ---------- */
+.rg-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+/* ---------- Warning signs ---------- */
+.rg-signs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 40px;
+}
+
+.rg-signs li {
+  border-left: 4px solid var(--rg-gold);
+  padding-left: 16px;
+}
+
+/* ---------- Myths and facts ---------- */
+.rg-mf {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 28px 0;
+  border-top: 1px solid var(--rg-gold);
+}
+
+.rg-mf h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.rg-fact h3 { color: var(--rg-text); }
+.rg-mf p { margin: 0; }
+
+/* ---------- Tips ---------- */
+.rg-tips {
+  margin: 0;
+  padding-left: 22px;
+  max-width: 62ch;
+}
+
+.rg-tips li { margin-bottom: 10px; }
+.rg-tips li::marker { color: var(--rg-gold); }
+
+/* ---------- Help banner ---------- */
+.rg-help {
+  background: var(--rg-maroon);
+  color: #fff;
+  text-align: center;
+  padding: 72px 0;
+}
+
+.rg-help h2 { color: #fff; }
+
+.rg-number {
+  display: inline-block;
+  margin: 16px 0 24px;
+  font-size: 3.4rem;
+  font-weight: 700;
+  color: var(--rg-gold);
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.rg-number:hover,
+.rg-number:focus-visible { text-decoration: underline; }
+
+.rg-self a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ---------- Partners ---------- */
+.rg-partners {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.rg-partners img { max-height: 90px; width: auto; }
+
+/* ---------- Phones and small tablets ---------- */
+@media (max-width: 700px) {
+  .rg-two-col,
+  .rg-signs,
+  .rg-mf { grid-template-columns: 1fr; gap: 24px; }
+
+  .rg-hero h1    { font-size: 2.2rem; }
+  .rg-number     { font-size: 2.4rem; }
+  .rg-section    { padding: 48px 0; }
+}
+
+
+/* ============================================================
+   RESPONSIBLE GAMBLING HERO: text on the left, picture on the right
+   Paste this at the very BOTTOM of css/style.css.
+   It comes after the older hero rules, so it overrides them.
+============================================================= */
+
+.rg-hero {
+  text-align: left;
+  padding: 72px 0;
+}
+
+.rg-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.rg-hero .rg-lead {
+  margin: 0 0 24px;
+  max-width: 52ch;
+}
+
+/* The italic phrase that replaces the two buttons */
+.rg-hero-note {
+  margin: 0;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.rg-hero-note a {
+  color: #e6cf94;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.rg-hero-note a:hover,
+.rg-hero-note a:focus-visible {
+  color: #fff;
+}
+
+/* The picture on the right */
+.rg-hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 8px;
+  border-bottom: 4px solid var(--rg-gold);
+}
+
+/* Phones and small tablets: stack the picture under the text */
+@media (max-width: 700px) {
+  .rg-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+
+
+/* ============================================================
+   RESPONSIBLE GAMBLING HERO, VERSION 3
+   Original sizes restored, gentle animations kept.
+   This REPLACES the version 2 block at the bottom of css/style.css.
+============================================================= */
+
+/* ---------- Original sizes ---------- */
+.rg-hero {
+  padding: 72px 0;
+  overflow: hidden;            /* stops the sliding picture causing a scrollbar */
+}
+
+.rg-hero .rg-wrap {
+  max-width: 1000px;
+}
+
+.rg-hero-grid {
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+}
+
+.rg-hero h1 {
+  font-size: 3rem;
+  animation: rg-rise 0.9s ease-out both;
+}
+
+/* Gold line that draws itself under the title */
+.rg-hero h1::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100px;
+  margin-top: 16px;
+  background: var(--rg-gold);
+  border-radius: 3px;
+  animation: rg-draw 1.1s ease-out 0.6s both;
+}
+
+.rg-hero .rg-lead {
+  font-size: 1.2rem;
+  animation: rg-rise 0.9s ease-out 0.25s both;
+}
+
+.rg-hero-note {
+  animation: rg-rise 0.9s ease-out 0.45s both;
+}
+
+/* ---------- The picture: original size, slow zoom kept ---------- */
+.rg-hero-image {
+  overflow: hidden;                         /* keeps the zoom inside the frame */
+  border-radius: 8px;
+  border-bottom: 4px solid var(--rg-gold);
+  animation: rg-slide-in 1s ease-out 0.2s both;
+}
+
+.rg-hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 0;
+  border-bottom: none;
+  animation: rg-zoom 16s ease-in-out infinite alternate;
+}
+
+/* ---------- Animations ---------- */
+@keyframes rg-rise {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes rg-draw {
+  from { width: 0; }
+  to   { width: 100px; }
+}
+
+@keyframes rg-slide-in {
+  from { opacity: 0; transform: translateX(48px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes rg-zoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.12); }
+}
+
+/* ---------- Phones and small tablets ---------- */
+@media (max-width: 700px) {
+  .rg-hero { padding: 56px 0; }
+
+  .rg-hero h1 { font-size: 2.2rem; }
+
+  .rg-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* ---------- Respect people who turn animations off ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .rg-hero h1,
+  .rg-hero h1::after,
+  .rg-hero .rg-lead,
+  .rg-hero-note,
+  .rg-hero-image,
+  .rg-hero-image img {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   RESPONSIBLE GAMBLING, ROUND 2
+   1) Hero lines up with the logo and menu
+   2) Quick-facts strip
+   3) Warning signs as cards
+   Paste at the very BOTTOM of css/style.css.
+============================================================= */
+
+/* ---------- 1) Line up with the logo and menu ---------- */
+.rg-hero .rg-wrap,
+.rg-quick .rg-wrap {
+  max-width: none;
+  /* If the left edge doesn't match your logo exactly, change 4.2vw and 80px */
+  padding: 0 clamp(24px, 4.2vw, 60px);
+}
+
+/* ---------- 2) Quick-facts strip (overlaps the hero) ---------- */
+.rg-quick {
+  position: relative;
+  z-index: 2;
+  margin-top: -48px;
+}
+
+.rg-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #fff;
+  border-top: 4px solid var(--rg-gold);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+
+.rg-quick-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 28px 32px;
+}
+
+.rg-quick-item + .rg-quick-item {
+  border-left: 1px solid #eadfc9;
+}
+
+.rg-quick-item strong {
+  font-size: 1.9rem;
+  line-height: 1.1;
+  color: var(--rg-maroon);
+}
+
+.rg-quick-item span {
+  color: #555;
+}
+
+.rg-quick + .rg-section {
+  padding-top: 72px;
+}
+
+/* ---------- 3) Warning signs as cards (same HTML, new look) ---------- */
+.rg-signs {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.rg-signs li {
+  background: #fff;
+  border-left: none;
+  border-top: 4px solid var(--rg-gold);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.rg-signs li:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(139, 30, 63, 0.16);
+}
+
+/* ---------- Tablets ---------- */
+@media (max-width: 960px) {
+  .rg-signs { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 700px) {
+  .rg-quick { margin-top: -28px; }
+
+  .rg-quick-grid { grid-template-columns: 1fr; }
+
+  .rg-quick-item + .rg-quick-item {
+    border-left: none;
+    border-top: 1px solid #eadfc9;
+  }
+
+  .rg-signs { grid-template-columns: 1fr; }
+}
+
+/* ---------- Respect people who turn animations off ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .rg-signs li { transition: none; }
+  .rg-signs li:hover { transform: none; }
+}
+
+
+/* ============================================================
+   FLOATING HELP BUTTON
+   Paste at the very BOTTOM of css/style.css.
+============================================================= */
+
+.rg-float-help {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  background: #b39658;          /* gold */
+  color: #3d0c1c;               /* dark maroon: easy to read on gold */
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.rg-float-help:hover,
+.rg-float-help:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Small pulsing dot, a gentle "we're here" signal */
+.rg-float-help::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #8b1e3f;
+  animation: rg-pulse 2s ease-out infinite;
+}
+
+@keyframes rg-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(139, 30, 63, 0.6); }
+  70%  { box-shadow: 0 0 0 10px rgba(139, 30, 63, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(139, 30, 63, 0); }
+}
+
+/* Phones: a bit smaller, and kept clear of the screen edge */
+@media (max-width: 700px) {
+  .rg-float-help {
+    right: 16px;
+    bottom: 16px;
+    padding: 12px 18px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rg-float-help,
+  .rg-float-help::before {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Make the contact strip text clearly readable on the picture */
+.contact-strip{
+    background:
+        linear-gradient(rgba(40, 8, 20, 0.65), rgba(40, 8, 20, 0.65)),
+        url("../images/poker_darkened.jpg") center / cover no-repeat;
+}
+
+.contact-strip h2{
+    color:#ffffff;
+    text-shadow:0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.contact-strip p{
+    color:#f5ecef;
+    text-shadow:0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Partner logos: identical frames, logos centred inside */
+.rg-partners {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 32px;
+}
+
+.rg-partners img {
+  box-sizing: border-box;
+  width: 300px;
+  height: 200px;
+  max-height: none;
+  padding: 16px;
+  object-fit: contain;          /* shows the whole logo, never stretched */
+  background: #fff;
+  border: 1px solid #eadfc9;
+  border-top: 4px solid #b39658;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 700px) {
+  .rg-partners img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Centre the whole partners section */
+.rg-wrap:has(> .rg-partners) {
+  text-align: center;
+}
+
+.rg-partners {
+  justify-content: center;
+}
+
+/* ============================================================
+   QUICK FACTS, REDESIGN: three separate icon cards that pop
+   Paste at the very BOTTOM of css/style.css.
+============================================================= */
+
+/* A little more room under the hero picture */
+.rg-hero {
+  padding-bottom: 120px;
+}
+
+.rg-quick {
+  margin-top: -72px;
+}
+
+/* The outer bar disappears; each item becomes its own card */
+.rg-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.rg-quick-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 28px;
+  background: #fff;
+  border: none;
+  border-top: 4px solid var(--rg-gold);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(60, 10, 25, 0.22);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rg-quick-item + .rg-quick-item {
+  border-left: none;
+}
+
+.rg-quick-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 50px rgba(60, 10, 25, 0.3);
+}
+
+/* Round maroon icon badge with a gold icon */
+.rg-quick-icon {
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--rg-maroon), var(--rg-maroon-dark));
+  box-shadow: 0 0 0 4px rgba(179, 150, 88, 0.3);
+}
+
+.rg-quick-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: #e6cf94;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.rg-quick-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rg-quick-text strong {
+  font-size: 1.7rem;
+  line-height: 1.1;
+  color: var(--rg-maroon);
+}
+
+.rg-quick-text span {
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Tablets: the third card drops to its own row */
+@media (max-width: 960px) {
+  .rg-quick-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Phones: one card per row */
+@media (max-width: 700px) {
+  .rg-hero { padding-bottom: 80px; }
+  .rg-quick { margin-top: -40px; }
+  .rg-quick-grid { grid-template-columns: 1fr; gap: 16px; }
+  .rg-quick-item { padding: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rg-quick-item { transition: none; }
+  .rg-quick-item:hover { transform: none; }
+}
+
+
+/* ============================================================
+   MYTHS AND FACTS: plain bullet list
+   Paste at the very BOTTOM of css/style.css.
+============================================================= */
+
+.rg-points {
+  max-width: 70ch;
+  margin: 0;
+  padding-left: 24px;
+}
+
+.rg-points > li {
+  margin-bottom: 22px;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.rg-points li::marker {
+  color: var(--rg-gold);
+}
+
+.rg-points ul {
+  margin: 8px 0 0;
+  padding-left: 24px;
+  list-style: circle;
+}
+
+.rg-points ul li {
+  font-size: 1rem;
+}
+
+.rg-points strong {
+  color: var(--rg-maroon);
+}
+
+
+/* ============================================================
+   MYTHS AND FACTS, OPTION C: gold side line
+   Paste at the very BOTTOM of css/style.css.
+============================================================= */
+
+.rg-items {
+  max-width: 760px;
+}
+
+.rg-item {
+  margin: 0 0 30px;
+  padding: 4px 0 4px 22px;
+  border-left: 4px solid var(--rg-gold);
+  transition: border-color 0.25s ease;
+}
+
+.rg-item:hover {
+  border-left-color: var(--rg-maroon);
+}
+
+.rg-item p {
+  margin: 0;
+}
+
+.rg-item-label {
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #8a6f3a;                /* a darker gold, easier to read on white */
+}
+
+.rg-item-myth {
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--rg-text);
+}
+
+.rg-item-fact {
+  line-height: 1.7;
+  color: var(--rg-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rg-item { transition: none; }
+}
+
+/* ============================================================
+   FOOTER: address, contacts, social media (no map)
+   Paste at the very BOTTOM of css/style.css.
+============================================================= */
+
+.rg-footer {
+  padding: 64px 0;
+  color: #fff;
+  border-top: 4px solid #b39658;
+  background:
+    linear-gradient(rgba(25, 5, 12, 0.78), rgba(25, 5, 12, 0.78)),
+    url("../wp-content/uploads/2019/03/gauteng_gambling_board_cover.jfif") center / cover no-repeat;
+}
+
+.rg-footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.rg-footer h3 {
+  margin: 0 0 20px;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* Short gold line under each heading */
+.rg-footer h3::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 10px;
+  background: #b39658;
+  border-radius: 2px;
+}
+
+.rg-footer p {
+  margin: 0 0 6px;
+  line-height: 1.8;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.rg-footer p a {
+  color: #e6cf94;
+  text-decoration: none;
+}
+
+.rg-footer p a:hover,
+.rg-footer p a:focus-visible {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Social media circles */
+.rg-social {
+  display: flex;
+  gap: 12px;
+}
+
+.rg-social a {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #b39658;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.rg-social a:hover,
+.rg-social a:focus-visible {
+  background: #8b1e3f;
+  transform: translateY(-4px);
+}
+
+.rg-social svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Tablets and phones: stack the columns */
+@media (max-width: 800px) {
+  .rg-footer { padding: 48px 0; }
+
+  .rg-footer-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rg-social a { transition: none; }
+  .rg-social a:hover { transform: none; }
+}
+
+/* Darkened poker picture: footer and "Need More Information?" strip */
+.rg-footer,
+.contact-strip {
+  background:
+    linear-gradient(rgba(40, 8, 20, 0.65), rgba(40, 8, 20, 0.65)),
+    url("../images/poker_darkened.jpg") center / cover no-repeat;
+}
+
+/* ============================================================
+   STAY IN CONTROL: one column, a gold icon beside each tip
+   Paste at the very BOTTOM of css/style.css.
+============================================================= */
+
+.rg-icontips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 680px;
+}
+
+.rg-icontips li {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.rg-icontips li:last-child {
+  margin-bottom: 0;
+}
+
+.rg-tip-icon {
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rg-tip-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: var(--rg-gold);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ============================================================
+   OUR MANDATE: seal on the left, list with gold icons on the right
+   Paste at the very BOTTOM of css/style.css.
+============================================================= */
+
+.rg-mandate {
+  border-top: 1px solid #eadfc9;
+}
+
+.rg-mandate-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* The seal, with two thin gold rings echoing the old graphic */
+.rg-mandate-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.rg-seal {
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid var(--rg-gold);
+  box-shadow:
+    0 0 0 10px #fff,
+    0 0 0 12px rgba(179, 150, 88, 0.6),
+    0 0 0 26px #fff,
+    0 0 0 28px rgba(179, 150, 88, 0.3);
+}
+
+.rg-seal img {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
+/* The list */
+.rg-mandate-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rg-mandate-list li {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.rg-mandate-list li:last-child {
+  margin-bottom: 0;
+}
+
+.rg-mandate-icon {
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rg-mandate-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: var(--rg-gold);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Phones and tablets: seal above the list */
+@media (max-width: 800px) {
+  .rg-mandate-grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .rg-seal {
+    width: 180px;
+    height: 180px;
+  }
+
+  .rg-seal img { width: 120px; }
+}
+
+/* ============================================================
+   OUR MANDATE: large gold rings with a slideshow inside
+   Paste at the very BOTTOM of css/style.css.
+============================================================= */
+
+.rg-mandate-grid {
+  grid-template-columns: 1fr 1.5fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.rg-mandate-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------- The large gold rings ---------- */
+.rg-rings {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  margin: 40px 0 34px;
+  border-radius: 50%;
+  border: 2px solid var(--rg-gold);
+  box-shadow:
+    0 0 0 14px #fff,
+    0 0 0 16px rgba(179, 150, 88, 0.6),
+    0 0 0 32px #fff,
+    0 0 0 34px rgba(179, 150, 88, 0.3);
+}
+
+/* Each icon sits in the middle and fades in and out */
+.rg-ring-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.rg-ring-icon.on {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.rg-ring-icon svg {
+  width: 120px;
+  height: 120px;
+  fill: none;
+  stroke: var(--rg-gold);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Caption and dots under the rings */
+.rg-mcap {
+  min-height: 3em;
+  max-width: 280px;
+  margin: 0;
+  text-align: center;
+  font-weight: 600;
+  color: var(--rg-maroon);
+}
+
+.rg-mdots {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.rg-mdots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(179, 150, 88, 0.35);
+  transition: background 0.3s ease;
+}
+
+.rg-mdots span.on {
+  background: var(--rg-gold);
+}
+
+/* ---------- The list on the right ---------- */
+.rg-mlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rg-mitem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 11px 0 11px 14px;
+  background: none;
+  border: none;
+  border-left: 3px solid transparent;
+  font: inherit;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  text-align: left;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.rg-mitem:hover {
+  color: var(--rg-text);
+}
+
+.rg-mitem:focus-visible {
+  outline: 2px solid var(--rg-gold);
+  outline-offset: 2px;
+}
+
+.rg-mitem.on {
+  color: var(--rg-text);
+  font-weight: 600;
+  border-left-color: var(--rg-gold);
+}
+
+.rg-mitem-icon {
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  opacity: 0.55;
+  transition: opacity 0.3s ease;
+}
+
+.rg-mitem.on .rg-mitem-icon {
+  opacity: 1;
+}
+
+.rg-mitem-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: var(--rg-gold);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- Tablets and phones: rings above the list ---------- */
+@media (max-width: 800px) {
+  .rg-mandate-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .rg-rings {
+    width: 200px;
+    height: 200px;
+  }
+
+  .rg-ring-icon svg {
+    width: 92px;
+    height: 92px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rg-ring-icon,
+  .rg-mdots span,
+  .rg-mitem,
+  .rg-mitem-icon {
+    transition: none;
+  }
+}
+
+/* ============================================================
+   MYTHS AND FACTS: pointing-finger Fact button, slide down and up
+   Paste at the very BOTTOM of css/style.css.
+   (Keep the earlier "gold side line" CSS: this builds on it.)
+============================================================= */
+
+/* ---------- The Fact button ---------- */
+.rg-factbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 20px;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #7a6130;                    /* dark gold: easy to read on white */
+  background: none;
+  border: 1.5px solid var(--rg-gold);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.rg-factbtn:hover,
+.rg-factbtn[aria-expanded="true"] {
+  background: var(--rg-gold);
+  color: #fff;
+}
+
+.rg-factbtn:focus-visible {
+  outline: 3px solid var(--rg-maroon);
+  outline-offset: 2px;
+}
+
+.rg-factbtn svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: rg-nudge 1.6s ease-in-out infinite;   /* the finger gently taps */
+}
+
+.rg-factbtn[aria-expanded="true"] svg {
+  animation: none;
+}
+
+@keyframes rg-nudge {
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(3px); }
+}
+
+/* ---------- The panel that slides down and up ---------- */
+.rg-factpanel {
+  display: grid;
+  grid-template-rows: 0fr;           /* closed */
+  transition: grid-template-rows 0.4s ease;
+}
+
+.rg-factpanel.open {
+  grid-template-rows: 1fr;           /* open */
+}
+
+.rg-factpanel > div {
+  overflow: hidden;
+  visibility: hidden;                /* hidden from tabbing and screen readers when closed */
+  transition: visibility 0s linear 0.4s;
+}
+
+.rg-factpanel.open > div {
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.rg-factpanel p {
+  margin: 14px 0 0;
+  padding: 14px 18px;
+  line-height: 1.7;
+  color: var(--rg-text);
+  background: var(--rg-tint);
+  border-left: 3px solid var(--rg-maroon);
+  border-radius: 0 8px 8px 0;
+}
+
+/* People who prefer less motion get no animation */
+@media (prefers-reduced-motion: reduce) {
+  .rg-factbtn svg { animation: none; }
+  .rg-factpanel,
+  .rg-factpanel > div { transition: none; }
+}
+
+/* Smaller text in Myths and facts */
+.rg-item-label  { font-size: 0.72rem; }
+.rg-item-myth   { font-size: 1.05rem; }
+.rg-factbtn     { font-size: 0.85rem; padding: 7px 16px; }
+.rg-factpanel p { font-size: 0.92rem; }
+
+/* ============================================================
+   CONTACT PAGE
+   Paste at the very BOTTOM of css/style.css.
+============================================================= */
+
+/* ---------- Hero ---------- */
+.ct-hero {
+  padding: 84px 0;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--rg-maroon), var(--rg-maroon-dark));
+}
+
+.ct-hero h1 {
+  margin: 0 0 18px;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fff;
+  animation: ct-rise 0.9s ease-out both;
+}
+
+/* Gold line that draws itself under the title */
+.ct-hero h1::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100px;
+  margin: 18px auto 0;
+  background: var(--rg-gold);
+  border-radius: 3px;
+  animation: ct-draw 1.1s ease-out 0.6s both;
+}
+
+.ct-hero p {
+  max-width: 56ch;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  animation: ct-rise 0.9s ease-out 0.25s both;
+}
+
+@keyframes ct-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes ct-draw {
+  from { width: 0; }
+  to   { width: 100px; }
+}
+
+/* ---------- Details and form ---------- */
+.ct-main {
+  padding: 72px 0;
+  background: var(--rg-tint);
+}
+
+.ct-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.ct-intro {
+  max-width: 44ch;
+  margin: 0 0 28px;
+}
+
+/* Contact details: gold icon, label, value */
+.ct-details {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+}
+
+.ct-details li {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+
+.ct-icon {
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+}
+
+.ct-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: var(--rg-gold);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ct-details strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--rg-maroon);
+}
+
+.ct-details a {
+  color: var(--rg-text);
+  text-decoration: underline;
+  text-decoration-color: var(--rg-gold);
+  text-underline-offset: 3px;
+}
+
+.ct-details a:hover,
+.ct-details a:focus-visible {
+  color: var(--rg-maroon);
+}
+
+.ct-follow {
+  margin: 0 0 12px;
+  font-weight: 600;
+  color: var(--rg-maroon);
+}
+
+/* ---------- The form ---------- */
+.ct-formwrap {
+  padding: 36px;
+  background: #fff;
+  border-top: 4px solid var(--rg-gold);
+  border-radius: 12px;
+  box-shadow: 0 12px 36px rgba(60, 10, 25, 0.12);
+}
+
+.ct-formwrap h2 {
+  margin-bottom: 22px;
+}
+
+.ct-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.ct-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.ct-field label {
+  margin-bottom: 6px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--rg-text);
+}
+
+.ct-opt {
+  font-weight: 400;
+  color: #777;
+}
+
+.ct-field input,
+.ct-field select,
+.ct-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  font: inherit;
+  color: var(--rg-text);
+  background: #fff;
+  border: 1px solid #d9cdb3;
+  border-radius: 8px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ct-field textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.ct-field input:focus,
+.ct-field select:focus,
+.ct-field textarea:focus {
+  outline: none;
+  border-color: var(--rg-gold);
+  box-shadow: 0 0 0 3px rgba(179, 150, 88, 0.3);
+}
+
+.ct-submit {
+  padding: 14px 32px;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--rg-maroon);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.ct-submit:hover,
+.ct-submit:focus-visible {
+  background: var(--rg-maroon-dark);
+  transform: translateY(-2px);
+}
+
+.ct-submit:focus-visible {
+  outline: 3px solid var(--rg-gold);
+  outline-offset: 2px;
+}
+
+.ct-status {
+  min-height: 1.5em;
+  margin: 16px 0 0;
+  font-weight: 600;
+  color: var(--rg-maroon);
+}
+
+/* ---------- Tablets and phones ---------- */
+@media (max-width: 860px) {
+  .ct-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .ct-hero { padding: 60px 0; }
+}
+
+@media (max-width: 560px) {
+  .ct-row { grid-template-columns: 1fr; gap: 0; }
+  .ct-formwrap { padding: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ct-hero h1,
+  .ct-hero h1::after,
+  .ct-hero p,
+  .ct-submit {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* ============================================================
+   CONTACT PAGE EXTRAS: Who can help, Find us (map), Common questions
+   Paste at the very BOTTOM of css/style.css.
+============================================================= */
+
+/* ---------- Who can help ---------- */
+.ct-help-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px 56px;
+}
+
+.ct-help-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding-top: 22px;
+  border-top: 1px solid var(--rg-gold);
+}
+
+.ct-help-item h3 {
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+}
+
+.ct-help-item p {
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+
+/* A text button that looks like a link */
+.ct-link {
+  padding: 0;
+  font: inherit;
+  font-weight: 600;
+  color: var(--rg-maroon);
+  background: none;
+  border: none;
+  border-bottom: 2px solid var(--rg-gold);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.ct-link:hover,
+.ct-link:focus-visible {
+  color: var(--rg-maroon-dark);
+  border-bottom-color: var(--rg-maroon);
+}
+
+/* ---------- Map ---------- */
+.ct-map {
+  margin: 0 0 24px;
+  overflow: hidden;
+  border-radius: 12px;
+  border-bottom: 4px solid var(--rg-gold);
+  box-shadow: 0 12px 36px rgba(60, 10, 25, 0.14);
+}
+
+.ct-map iframe {
+  display: block;
+  width: 100%;
+  height: 400px;
+  border: 0;
+}
+
+.ct-btn {
+  display: inline-block;
+  padding: 13px 28px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  background: var(--rg-maroon);
+  border-radius: 8px;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.ct-btn:hover,
+.ct-btn:focus-visible {
+  background: var(--rg-maroon-dark);
+  transform: translateY(-2px);
+}
+
+/* ---------- Common questions ---------- */
+.ct-faq {
+  max-width: 760px;
+}
+
+.ct-faq-item {
+  border-bottom: 1px solid #eadfc9;
+}
+
+.ct-faq-item:first-child {
+  border-top: 1px solid #eadfc9;
+}
+
+.ct-faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 18px 0;
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: left;
+  color: var(--rg-maroon);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.ct-faq-q:hover {
+  color: var(--rg-maroon-dark);
+}
+
+.ct-faq-q:focus-visible {
+  outline: 3px solid var(--rg-gold);
+  outline-offset: 2px;
+}
+
+.ct-faq-q svg {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--rg-gold);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.35s ease;
+}
+
+.ct-faq-q[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+/* The answer slides down and up */
+.ct-faq-a {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease;
+}
+
+.ct-faq-a.open {
+  grid-template-rows: 1fr;
+}
+
+.ct-faq-a > div {
+  overflow: hidden;
+  visibility: hidden;
+  transition: visibility 0s linear 0.4s;
+}
+
+.ct-faq-a.open > div {
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.ct-faq-a p {
+  margin: 0;
+  padding: 0 0 20px;
+  line-height: 1.7;
+}
+
+/* ---------- Tablets and phones ---------- */
+@media (max-width: 800px) {
+  .ct-help-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .ct-map iframe { height: 300px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ct-faq-q svg,
+  .ct-faq-a,
+  .ct-faq-a > div,
+  .ct-btn,
+  .ct-link {
+    transition: none;
+  }
+}
+
+/* ============================================================
+   CONTACT MAP SIZE
+   Paste at the very BOTTOM of css/style.css, then change the numbers.
+============================================================= */
+
+.ct-map {
+  max-width: 400px;        /* how wide the map is. Use 100% for the full width */
+}
+
+.ct-map iframe {
+  height: 180px;           /* how tall the map is */
+}
+
+/* Phones */
+@media (max-width: 800px) {
+  .ct-map iframe {
+    height: 180px;
+  }
+}
+
+/* ============================================================
+   RESPONSIBLE GAMBLING HERO: white background
+   Paste at the very BOTTOM of css/style.css.
+   It overrides the earlier maroon hero, so don't delete that.
+============================================================= */
+
+.rg-hero {
+  background: #fff;
+  color: var(--rg-text);
+  padding-bottom: 72px;          /* was 120px, the overlap is no longer needed */
+}
+
+/* The title, now maroon so it shows on white */
+.rg-hero h1 {
+  color: var(--rg-maroon);
+}
+
+.rg-hero .rg-lead {
+  color: var(--rg-text);
+}
+
+/* The italic line and its links */
+.rg-hero-note {
+  color: var(--rg-text);
+}
+
+.rg-hero-note a {
+  color: var(--rg-maroon);
+  text-decoration: underline;
+  text-decoration-color: var(--rg-gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.rg-hero-note a:hover,
+.rg-hero-note a:focus-visible {
+  color: var(--rg-maroon-dark);
+}
+
+/* The three quick-facts cards now sit below the hero instead of overlapping it */
+.rg-quick {
+  margin-top: 0;
+}
+
+/* Phones */
+@media (max-width: 700px) {
+  .rg-hero {
+    padding-bottom: 48px;
+  }
+}
+
+/* Bigger logo, menu bar height stays the same */
+.navbar .logo img {
+  height: 110px;
+  width: auto;
+  margin: -13px 0;
+}
 .dropdown{
     position:relative;
 }
