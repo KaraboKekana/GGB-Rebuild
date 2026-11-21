@@ -2566,3 +2566,182 @@ color:#f4d47c;
     border-color:#8b1e3f;
 }
 
+.download-btn {
+    display: inline-block;
+    background-color: #b08d57;
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #8c6d3f;
+    transform: translateY(-2px);
+}.se-btn {
+    display: inline-block;
+    background-color: #b08d57;
+    color: #ffffff;
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.se-btn:hover {
+    background-color: #8f6f43;
+    transform: translateY(-2px);
+}
+/* ============================================================
+   SELF-EXCLUSION, NUMBERED SECTIONS (Option J)
+   Paste at the very BOTTOM of css/style.css.
+   Uses new class names (sx-), so it can't clash with older styles.
+============================================================= */
+
+.sx {
+  border-top: 1px solid #eadfc9;
+}
+
+.sx-intro {
+  max-width: 75ch;
+  margin: 0 0 30px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.sx-intro strong,
+.sx-row strong {
+  font-weight: 700;
+}
+
+/* ---------- The download strip and button ---------- */
+.sx-download {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 820px;
+  margin: 0 0 40px;
+  padding: 18px 24px;
+  border: 1px solid #d9cdb3;
+  border-radius: 8px;
+}
+
+.sx-download h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.sx-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  background: var(--rg-gold);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.sx-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sx-btn:hover,
+.sx-btn:focus-visible {
+  background: var(--rg-maroon);
+  transform: translateY(-2px);
+}
+
+.sx-btn:focus-visible {
+  outline: 3px solid var(--rg-gold);
+  outline-offset: 2px;
+}
+
+/* ---------- The numbered sections ---------- */
+.sx-list {
+  max-width: 820px;
+}
+
+.sx-row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 16px;
+  padding: 24px 0;
+  border-top: 1px solid #e3dac6;
+}
+
+.sx-row:last-child {
+  border-bottom: 1px solid #e3dac6;
+}
+
+.sx-num {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #8a6f3a;                 /* a darker gold, easy to read on white */
+}
+
+.sx-row h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+
+.sx-row p {
+  margin: 0 0 10px;
+  line-height: 1.75;
+}
+
+.sx-row p:last-child {
+  margin-bottom: 0;
+}
+
+.sx-row a {
+  font-weight: 700;
+  color: var(--rg-maroon);
+  text-decoration: underline;
+  text-decoration-color: var(--rg-gold);
+  text-underline-offset: 3px;
+}
+
+.sx-row a:hover,
+.sx-row a:focus-visible {
+  color: var(--rg-maroon-dark);
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 700px) {
+  .sx-download {
+    padding: 16px 18px;
+  }
+
+  .sx-row {
+    grid-template-columns: 48px 1fr;
+    gap: 12px;
+  }
+
+  .sx-num {
+    font-size: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sx-btn {
+    transition: none;
+  }
+}
