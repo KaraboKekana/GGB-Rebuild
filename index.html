@@ -12,21 +12,54 @@
 
     <nav class="navbar">
 
+
 <div class="logo">
   <img src="wp-content/uploads/2019/03/ggb-logo-400x395-300x296.png" alt="Logo">
 </div>
 
 
         <ul class="nav-links">
-            <li>Home</li>
-            <li><a href="about.html">About Us</a></li>
-            <li>Licensing</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li class="dropdown">
+    <a href="about.html">About ▼
+</a>
+
+    <ul class="dropdown-menu">
+        <li><a href="about.html#who-we-are">Who We Are</a></li>
+        <li><a href="about.html#mission">Mission & Vision</a></li>
+        <li><a href="about.html#mandate">Mandate</a></li>
+
+    </ul>
+</li>
+            <li class="dropdown">
+    <a href="licensing.html">Licensing ▼</a>
+
+    <ul class="dropdown-menu">
+        <li><a href="licensing.html#casino">Casino Licences</a></li>
+        <li><a href="licensing.html#betting">Betting Licences</a></li>
+        <li><a href="licensing.html#bingo">Bingo Licences</a></li>
+        <li><a href="licensing.html#lpm">LPM Licences</a></li>
+    </ul>
+</li>
             <li>Responsible Gambling</a></li>
             <li>Tenders</a></li>
             <li>Contact</a></li>
+            <li>
+<a href="#" id="search-toggle">🔍</a>
+</li>
+</li>
         </ul>
 
     </nav>
+
+
+<div class="search-container" id="search-container">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search the website..."
+    >
+</div>
 
 <section class="hero">
     <div class="hero-overlay">
@@ -49,7 +82,7 @@
 </div>
     </div>
 </section>
-<section class="about-preview">
+<section class="about-preview reveal">
 
     <div class="about-container">
 
@@ -222,24 +255,30 @@
 
 <footer class="footer">
 
-    <div class="footer-content">
+    <h3>Gauteng Gambling Board</h3>
 
-        <h3>Gauteng Gambling Board</h3>
+    <p>
+        Regulating and monitoring gambling activities in Gauteng Province.
+    </p>
 
-        <p>
-            Regulating and monitoring gambling activities in Gauteng Province.
-        </p>
+    <p>
+        📍 125 Corlett Drive, Bramley, Johannesburg
+    </p>
 
-        <p>
-            © 2026 Gauteng Gambling Board. All Rights Reserved.
-        </p>
+    <p>
+        ☎ +27 11 581 4800
+    </p>
 
-    </div>
+    <p>
+        ✉ enquiries@ggb.org.za
+    </p>
 
-
+    <p>
+        © 2026 Gauteng Gambling Board. All Rights Reserved.
+    </p>
 
 </footer>
-
+<script src="script.js"></script>
 </body>
 
 </html>
