@@ -119,7 +119,9 @@
 
         <!-- To make this form really send emails, put your form service address
              in data-endpoint (see the instructions). Until then it is a demo. -->
-        <form id="contactForm" class="ct-form" data-endpoint="">
+        <form id="contactForm" class="ct-form"
+      action="https://formspree.io/f/mjywanyd"
+      method="POST">
 
           <div class="ct-row">
             <div class="ct-field">
@@ -402,14 +404,10 @@
         return;
       }
 
-      var url = form.getAttribute('data-endpoint');
+      var url = form.getAttribute('action');
 
       /* No service connected yet: be honest about it */
-      if (!url) {
-        status.textContent = 'Demo only: this form is not connected yet, so your message was not sent.';
-        return;
-      }
-
+      
       status.textContent = 'Sending...';
 
       fetch(url, {
