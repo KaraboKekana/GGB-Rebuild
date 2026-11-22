@@ -257,6 +257,12 @@ color:#f4d47c;
 .notice a:hover{
     color:#6f1432;
 }
+
+.notice a.btn,
+.notice a.btn:hover{
+    color:#f4d47c;
+}
+
 .notice::before{
     content:"";
     position:absolute;
