@@ -2636,3 +2636,7 @@ color:#f4d47c;
     transform: none;
   }
 }
+.rg-hero .rg-lead {
+  max-width: 62ch;
+  font-size: 1.1rem;
+}
