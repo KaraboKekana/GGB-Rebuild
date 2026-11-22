@@ -2745,3 +2745,50 @@ color:#f4d47c;
     transition: none;
   }
 }
+/* ============================================================
+   SELF-EXCLUSION POSTER AS A BANNER AT THE TOP
+   Paste at the very BOTTOM of css/style.css.
+   Safe to paste even if you added the earlier poster CSS:
+   this block comes last, so it takes priority.
+============================================================= */
+
+.sx-poster {
+  max-width: none;               /* full width of the section, like a banner */
+  margin: 0 0 44px;
+}
+
+.sx-poster a {
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 14px 36px rgba(60, 10, 25, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sx-poster a:hover,
+.sx-poster a:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 44px rgba(60, 10, 25, 0.28);
+}
+
+.sx-poster a:focus-visible {
+  outline: 3px solid var(--rg-gold);
+  outline-offset: 3px;
+}
+
+.sx-poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sx-poster a {
+    transition: none;
+  }
+
+  .sx-poster a:hover,
+  .sx-poster a:focus-visible {
+    transform: none;
+  }
+}
