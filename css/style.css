@@ -2745,3 +2745,13 @@ color:#f4d47c;
     transition: none;
   }
 }
+#search-toggle {
+    color: #b39658;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+#search-toggle:hover {
+    color: #f4d47c;
+}

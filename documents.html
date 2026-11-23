@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms and Documents | Gauteng Gambling Board</title>
+    <meta name="description" content="Gauteng Gambling Board application forms and annual reports.">
+
+    <style>
+/* ==========================================================
+   ggb.css : stylesheet for Home, About, Licensing, Documents.
+   Standalone (needs no other CSS file).
+   The look matches the Responsible Gambling and Contact pages:
+   maroon + gold, cream sections, white cards with a gold top
+   edge, round maroon icon badges, maroon help banner, and the
+   same three-column photo footer.
+   ========================================================== */
+
+:root {
+    --maroon: #8b1e3f;
+    --maroon-dark: #5a1229;
+    --gold: #b39658;
+    --gold-soft: #e6cf94;
+    --gold-light: #f4d47c;
+    --text: #2b2b2b;
+    --muted: #4a4a4a;
+    --tint: #faf6f1;
+    --line: #eadfc9;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+body {
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+    background: #fff;
+}
+
+img { max-width: 100%; }
+a { color: inherit; }
+[id] { scroll-margin-top: 90px; }
+
+h1, h2, h3 { color: var(--maroon); line-height: 1.2; }
+h2 { font-size: 1.9rem; }
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.skip-link {
+    position: absolute;
+    left: 1rem; top: -4rem;
+    background: var(--gold);
+    color: #3d0c1c;
+    padding: .6rem 1rem;
+    border-radius: 6px;
+    font-weight: 700;
+    z-index: 2000;
+}
+.skip-link:focus { top: 1rem; }
+
+a:focus-visible, button:focus-visible, input:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* ---------- Header and navigation ---------- */
+header { position: sticky; top: 0; z-index: 1000; }
+
+.navbar {
+    position: relative;
+    background: var(--maroon);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px clamp(24px, 3vw, 60px);
+    border-bottom: 3px solid var(--gold);
+}
+
+.logo { display: block; }
+.logo img { display: block; height: clamp(80px, 7vw, 110px); width: auto; margin: -13px 0; }
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 1.8vw, 30px);
+}
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color .2s;
+}
+.nav-links > li > a:hover,
+.nav-links > li > a:focus-visible { color: var(--gold-light); }
+.nav-links a.active { color: var(--gold-light); font-weight: 700; }
+
+.chevron { font-size: .65em; margin-left: .25rem; }
+
+#search-toggle { color: var(--gold); font-size: 1.2rem; }
+#search-toggle:hover { color: var(--gold-light); }
+
+.dropdown { position: relative; }
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    list-style: none;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .15);
+    z-index: 1100;
+}
+.dropdown:hover > .dropdown-menu,
+.dropdown:focus-within > .dropdown-menu { display: block; }
+.dropdown-menu li a { display: block; padding: 12px 15px; color: #333; font-weight: 400; }
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus-visible { background: var(--tint); color: var(--maroon); }
+
+.search-container {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .1);
+    z-index: 1050;
+}
+.search-container.show { display: block; }
+.search-container input {
+    width: 60%;
+    max-width: 600px;
+    padding: 15px 20px;
+    border: 2px solid #d9cdb3;
+    border-radius: 40px;
+    font-size: 16px;
+}
+.search-container input:focus { border-color: var(--gold); outline: none; box-shadow: 0 0 0 3px rgba(179, 150, 88, .3); }
+
+.nav-toggle { display: none; background: none; border: 0; color: #fff; font-size: 1.6rem; cursor: pointer; }
+
+/* ---------- Buttons ---------- */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .25s, transform .25s;
+}
+.btn-primary { background: var(--gold); color: #3d0c1c; }
+.btn-primary:hover { background: #c4a96a; transform: translateY(-2px); }
+.btn-secondary { background: #fff; color: var(--maroon); }
+.btn-secondary:hover { background: var(--tint); transform: translateY(-2px); }
+
+/* ---------- Hero (homepage) and page hero (inner pages) ---------- */
+.hero, .page-hero {
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+}
+.hero {
+    min-height: 56vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-overlay { max-width: 900px; width: 100%; padding: clamp(3.5rem, 8vw, 6rem) 24px; }
+.page-hero { padding: clamp(3.5rem, 7vw, 5.25rem) 24px; }
+
+.hero h1, .page-hero h1 {
+    color: #fff;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 800;
+    letter-spacing: -.02em;
+    margin-bottom: 18px;
+    animation: ggb-rise .9s ease-out both;
+}
+.hero h1::after, .page-hero h1::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 100px;
+    margin: 18px auto 0;
+    background: var(--gold);
+    border-radius: 3px;
+    animation: ggb-draw 1.1s ease-out .6s both;
+}
+.hero p, .page-hero p {
+    max-width: 56ch;
+    margin: 0 auto 28px;
+    font-size: 1.2rem;
+    animation: ggb-rise .9s ease-out .25s both;
+}
+.page-hero p { margin-bottom: 0; }
+.hero-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+@keyframes ggb-rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes ggb-draw { from { width: 0; } to { width: 100px; } }
+
+/* ---------- Shared badge: round maroon icon with soft-gold glyph ---------- */
+.card h3 i,
+.mvv-card h3 i,
+.licence-icon,
+.doc-icon {
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.35rem;
+    color: var(--gold-soft);
+    background: linear-gradient(135deg, var(--maroon), var(--maroon-dark));
+    box-shadow: 0 0 0 4px rgba(179, 150, 88, .3);
+}
+
+/* ---------- Shared card look: white, gold top edge ---------- */
+.card, .notice, .mvv-card, .licence, .doc-row {
+    background: #fff;
+    border-top: 4px solid var(--gold);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .06);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+a.card:hover, a.card:focus-visible,
+.notice:hover, .mvv-card:hover, .licence:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(139, 30, 63, .16);
+}
+
+/* ---------- Homepage: about preview ---------- */
+.about-preview { padding: 4rem 10% 0; text-align: center; background: #fff; }
+.about-preview h2 { font-size: clamp(1.9rem, 4vw, 2.4rem); margin-bottom: 1.25rem; }
+.about-preview p { max-width: 62ch; margin: 0 auto; font-size: 1.1rem; color: var(--muted); }
+
+.about-image { padding: 0 1.5rem; }
+.about-image img {
+    display: block;
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    max-height: 480px;
+    margin: 2rem auto 0;
+    object-fit: cover;
+    border-radius: 12px;
+    border-bottom: 4px solid var(--gold);
+    box-shadow: 0 12px 36px rgba(60, 10, 25, .14);
+}
+
+/* ---------- Homepage: quick services ---------- */
+.services-section { padding: 4rem 1.5rem; }
+.services-section h2 { text-align: center; margin-bottom: 2rem; }
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 28px 24px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+}
+.card h3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .9rem;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+.card p { color: var(--muted); line-height: 1.6; }
+
+/* ---------- Stats band (same maroon as the help banner) ---------- */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    padding: 3.5rem 8%;
+    background: var(--maroon);
+    color: #fff;
+    text-align: center;
+}
+.stat-box h2 { font-size: clamp(2.2rem, 5vw, 3.2rem); margin: 0 0 .25rem; color: var(--gold-soft); }
+.stat-box p { font-size: 1.1rem; line-height: 1.4; }
+
+/* ---------- Notices ---------- */
+.announcements { background: var(--tint); padding: 4rem 1.5rem; }
+.announcements h2 { text-align: center; margin-bottom: 2rem; }
+.announcement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.notice {
+    display: flex;
+    flex-direction: column;
+    padding: 26px;
+    text-decoration: none;
+    color: inherit;
+}
+.notice h3 { font-size: 1.15rem; margin-bottom: 10px; }
+.notice p { color: var(--muted); line-height: 1.7; margin-bottom: 18px; }
+.notice .tag {
+    margin: 0 0 .4rem;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #8a6f3a;
+}
+.read-more {
+    margin-top: auto;
+    width: fit-content;
+    color: var(--maroon);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid var(--gold);
+    transition: color .2s, border-color .2s;
+}
+.read-more:hover { color: var(--maroon-dark); border-bottom-color: var(--maroon); }
+
+/* ---------- Help banner ---------- */
+.rg-help { background: var(--maroon); color: #fff; text-align: center; padding: 4.5rem 1.5rem; }
+.rg-help h2 { color: #fff; margin-bottom: 16px; }
+.rg-help p { max-width: 56ch; margin: 0 auto; }
+.rg-number {
+    display: inline-block;
+    margin: 16px 0 24px;
+    font-size: clamp(2.4rem, 6vw, 3.4rem);
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--gold);
+    text-decoration: none;
+}
+.rg-number:hover, .rg-number:focus-visible { text-decoration: underline; }
+.rg-self a { color: #fff; text-decoration: underline; }
+
+/* ---------- Call-to-action strip (inner pages): light, so it never looks like a second footer ---------- */
+.contact-strip {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    background: var(--tint);
+    border-top: 1px solid var(--line);
+}
+.contact-strip h2 { color: var(--maroon); margin-bottom: 12px; }
+.contact-strip p { color: var(--muted); margin: 0 auto 24px; max-width: 56ch; }
+.contact-strip .btn-primary { background: var(--maroon); color: #fff; }
+.contact-strip .btn-primary:hover { background: var(--maroon-dark); }
+
+/* ---------- Footer (same as Responsible Gambling and Contact) ---------- */
+.rg-footer {
+    padding: 4rem 0 0;
+    color: #fff;
+    border-top: 4px solid var(--gold);
+    background:
+        linear-gradient(rgba(40, 8, 20, .65), rgba(40, 8, 20, .65)),
+        url("images/poker_darkened.jpg") center / cover no-repeat,
+        #3a0b1c;
+}
+.rg-footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+}
+.rg-footer h3 { margin: 0 0 20px; font-size: 1.2rem; color: #fff; }
+.rg-footer h3::after {
+    content: "";
+    display: block;
+    width: 40px; height: 3px;
+    margin-top: 10px;
+    background: var(--gold);
+    border-radius: 2px;
+}
+.rg-footer p { margin: 0 0 6px; line-height: 1.8; text-shadow: 0 1px 6px rgba(0, 0, 0, .5); }
+.rg-footer p a { color: var(--gold-soft); text-decoration: none; }
+.rg-footer p a:hover, .rg-footer p a:focus-visible { color: #fff; text-decoration: underline; }
+
+.rg-social { display: flex; gap: 12px; }
+.rg-social a {
+    width: 46px; height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--gold);
+    transition: transform .25s ease, background .25s ease;
+}
+.rg-social a:hover, .rg-social a:focus-visible { background: var(--maroon); transform: translateY(-4px); }
+.rg-social svg {
+    width: 22px; height: 22px;
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.rg-footer .rg-footer-bottom {
+    max-width: 1100px;
+    margin: 2.5rem auto 0;
+    padding: 1.25rem 24px;
+    border-top: 1px solid rgba(255, 255, 255, .18);
+    text-align: center;
+    font-size: .92rem;
+    color: #f5ecef;
+}
+.rg-footer-bottom a { color: var(--gold-soft); text-decoration: none; }
+.rg-footer-bottom a:hover { color: #fff; text-decoration: underline; }
+
+/* ---------- Floating help button ---------- */
+.rg-float-help {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 22px;
+    background: var(--gold);
+    color: #3d0c1c;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 999px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .28);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+.rg-float-help:hover, .rg-float-help:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+}
+.rg-float-help::before {
+    content: "";
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--maroon);
+    animation: ggb-pulse 2s ease-out infinite;
+}
+@keyframes ggb-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(139, 30, 63, .6); }
+    70%  { box-shadow: 0 0 0 10px rgba(139, 30, 63, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(139, 30, 63, 0); }
+}
+
+/* ---------- Inner pages: text blocks ---------- */
+.about-content { max-width: 800px; margin: 0 auto; padding: 4rem 1.5rem 0; text-align: center; }
+.about-content h2 { margin-bottom: 16px; }
+.about-content p { font-size: 1.1rem; color: var(--muted); }
+.about-content a { color: var(--maroon); font-weight: 600; text-decoration: none; border-bottom: 2px solid var(--gold); }
+.about-content a:hover { color: var(--maroon-dark); }
+.about-content .note { font-size: 1rem; }
+
+/* ---------- About page ---------- */
+.mvv-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+.mvv-card { padding: 28px 24px; text-align: center; }
+.mvv-card h3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .9rem;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+.mvv-card p { color: var(--muted); }
+
+.mandate { text-align: center; padding: 1.5rem 1.5rem 0; }
+.mandate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 4rem;
+}
+
+.history { text-align: center; background: var(--tint); padding: 4rem 1.5rem; }
+.history h2 { margin-bottom: 16px; }
+.history p { max-width: 62ch; margin: 0 auto; color: var(--muted); }
+
+/* ---------- Licensing page ---------- */
+.licence-list { display: grid; gap: 1.5rem; max-width: 900px; margin: 3rem auto 0; padding: 0 1.5rem; }
+.licence { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.75rem; }
+.licence h2 { font-size: 1.4rem; margin: 0 0 .4rem; }
+.licence p { color: var(--muted); margin: 0 0 .5rem; }
+.licence p:last-child { margin-bottom: 0; }
+
+.process { text-align: left; padding-bottom: 4rem; }
+.process h2 { text-align: center; }
+.steps { margin: 1.5rem 0 1rem 1.25rem; color: var(--muted); font-size: 1.05rem; }
+.steps li { margin-bottom: .75rem; padding-left: .5rem; }
+.steps li::marker { color: var(--gold); font-weight: 700; }
+.steps strong { color: var(--text); }
+
+/* ---------- Documents page ---------- */
+.doc-section { background: var(--tint); padding: 4rem 1.5rem; margin-top: 4rem; }
+.doc-wrap { max-width: 900px; margin: 0 auto; }
+.doc-wrap h2 { margin-bottom: 1.5rem; text-align: center; }
+.doc-list { list-style: none; display: grid; gap: 1rem; }
+.doc-row { display: flex; align-items: center; gap: 1.25rem; padding: 1.25rem 1.5rem; }
+.doc-icon { width: 48px; height: 48px; flex-basis: 48px; font-size: 1.15rem; }
+.doc-text { flex: 1; }
+.doc-text h3 { margin: 0 0 .15rem; font-size: 1.15rem; }
+.doc-text p { margin: 0; color: var(--muted); line-height: 1.5; }
+.doc-btn {
+    flex: 0 0 auto;
+    padding: .65rem 1.25rem;
+    background: var(--maroon);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background .25s, transform .25s;
+}
+.doc-btn:hover { background: var(--maroon-dark); transform: translateY(-2px); }
+
+/* ---------- Tablet and phone ---------- */
+@media (max-width: 1100px) {
+    .navbar { flex-wrap: wrap; }
+    .nav-toggle { display: block; margin-left: auto; }
+    .nav-links { display: none; flex-direction: column; align-items: flex-start; width: 100%; gap: 0; }
+    .nav-links.open { display: flex; }
+    .nav-links > li { width: 100%; }
+    .nav-links > li > a { display: block; padding: .9rem 0; }
+    .dropdown-menu { position: static; display: block; box-shadow: none; background: transparent; border-radius: 0; }
+    .dropdown-menu li a { color: #fff; padding: .5rem 0 .5rem 1rem; }
+    .dropdown-menu li a:hover { background: transparent; color: var(--gold-light); }
+}
+
+@media (max-width: 800px) {
+    .rg-footer { padding-top: 3rem; }
+    .rg-footer-inner { grid-template-columns: 1fr; gap: 36px; }
+}
+
+@media (max-width: 640px) {
+    .logo img { height: 70px; margin: 0; }
+    .hero-buttons { flex-direction: column; align-items: stretch; max-width: 280px; margin: 0 auto; }
+    .licence { flex-direction: column; gap: .75rem; }
+    .doc-row { flex-wrap: wrap; }
+    .doc-btn { width: 100%; text-align: center; }
+    .about-preview { padding-left: 1rem; padding-right: 1rem; }
+    .rg-float-help { right: 16px; bottom: 16px; padding: 12px 18px; font-size: .95rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+
+</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="page-docs">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header>
+    <nav class="navbar" aria-label="Main navigation">
+
+        <a class="logo" href="homepage.html" aria-label="Gauteng Gambling Board home">
+            <img src="wp-content/uploads/2019/03/ggb-logo-400x395-300x296.png"
+                 alt="Gauteng Gambling Board logo" width="300" height="296">
+        </a>
+
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+            <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="homepage.html">Home</a></li>
+
+            <li class="dropdown">
+                <a href="about.html" aria-haspopup="true">About <i class="fas fa-chevron-down chevron" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="about.html#who-we-are">Who We Are</a></li>
+                    <li><a href="about.html#mission">Mission &amp; Vision</a></li>
+                    <li><a href="about.html#mandate">Mandate</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="licensing.html" aria-haspopup="true">Licensing <i class="fas fa-chevron-down chevron" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="licensing.html#casino">Casino Licences</a></li>
+                    <li><a href="licensing.html#betting">Betting Licences</a></li>
+                    <li><a href="licensing.html#bingo">Bingo Licences</a></li>
+                    <li><a href="licensing.html#lpm">LPM Licences</a></li>
+                </ul>
+            </li>
+
+            <li><a href="responsible-gambling.html">Responsible Gambling</a></li>
+            <li><a href="Tenders.html">Tenders</a></li>
+            <li><a href="documents.html" class="active" aria-current="page">Documents</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <a href="#" id="search-toggle" aria-label="Search the website">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+
+        <div class="search-container" id="search-container">
+            <label for="searchInput" class="visually-hidden">Search the website</label>
+            <input type="search" id="searchInput" placeholder="Search the website...">
+        </div>
+
+    </nav>
+</header>
+
+<main id="main">
+
+    <section class="page-hero">
+        <h1>Forms and Documents</h1>
+        <p>Application forms and the Board's annual reports in one place.</p>
+    </section>
+
+    <section class="about-content" id="forms">
+        <h2>Application forms</h2>
+        <p>
+            Forms are provided for casino, betting, bingo and limited payout machine licences.
+            Always use the current version, because requirements change.
+        </p>
+        <!-- TODO: copy the real form PDFs from the old site's forms page, then list them like this:
+             <li class="doc-row"> ... <a class="doc-btn" href="forms/casino-application.pdf">Open PDF</a></li> -->
+        <p class="note">
+            The current forms are being added to this page. Until then, request the form you need
+            from the Board on <a href="tel:+27115814800">(011) 581 4800</a> or
+            <a href="mailto:info@ggb.org.za">info@ggb.org.za</a>.
+        </p>
+    </section>
+
+    <section class="doc-section" id="annual-reports">
+        <div class="doc-wrap">
+            <h2>Annual reports</h2>
+            <ul class="doc-list">
+            <li class="doc-row">
+                <span class="doc-icon"><i class="fas fa-file-pdf" aria-hidden="true"></i></span>
+                <div class="doc-text">
+                    <h3>Annual Report 2023/24</h3>
+                    <p>Latest report: performance, governance and financial statements.</p>
+                </div>
+                <a class="doc-btn" href="https://ggbwordpress.azurewebsites.net/wp-content/uploads/2024/09/Annual_Report_2023-2024_FINAL.pdf" target="_blank" rel="noopener noreferrer">Open PDF<span class="visually-hidden"> (Annual Report 2023/24)</span></a>
+            </li>
+            <li class="doc-row">
+                <span class="doc-icon"><i class="fas fa-file-pdf" aria-hidden="true"></i></span>
+                <div class="doc-text">
+                    <h3>Annual Report 2022/23</h3>
+                    <p>Includes the Board's enforcement results for the year.</p>
+                </div>
+                <a class="doc-btn" href="https://ggbwordpress.azurewebsites.net/wp-content/uploads/2023/12/GGB_Annual_Report_2023.pdf" target="_blank" rel="noopener noreferrer">Open PDF<span class="visually-hidden"> (Annual Report 2022/23)</span></a>
+            </li>
+            <li class="doc-row">
+                <span class="doc-icon"><i class="fas fa-file-pdf" aria-hidden="true"></i></span>
+                <div class="doc-text">
+                    <h3>Annual Report 2012/13</h3>
+                    <p>Archive.</p>
+                </div>
+                <a class="doc-btn" href="https://ggbwordpress.azurewebsites.net/wp-content/uploads/2019/03/Annual-Report-2013.pdf" target="_blank" rel="noopener noreferrer">Open PDF<span class="visually-hidden"> (Annual Report 2012/13)</span></a>
+            </li>
+            <li class="doc-row">
+                <span class="doc-icon"><i class="fas fa-file-pdf" aria-hidden="true"></i></span>
+                <div class="doc-text">
+                    <h3>Annual Report 2007/08</h3>
+                    <p>Archive.</p>
+                </div>
+                <a class="doc-btn" href="https://ggbwordpress.azurewebsites.net/wp-content/uploads/2019/03/Annual-Report-2008.pdf" target="_blank" rel="noopener noreferrer">Open PDF<span class="visually-hidden"> (Annual Report 2007/08)</span></a>
+            </li>
+            </ul>
+            <!-- TODO: add the 2021/22 report and the years in between from the old site. -->
+        </div>
+    </section>
+
+    <section class="contact-strip">
+        <h2>Can't find a document?</h2>
+        <p>Ask the Board and we will point you to it.</p>
+        <a href="contact.html" class="btn-primary">Contact Us</a>
+    </section>
+
+</main>
+
+<footer class="rg-footer">
+  <div class="rg-footer-inner">
+
+    <div class="rg-footer-col">
+      <h3>Address</h3>
+      <p>125 Corlett Drive,<br>
+         Johannesburg, 2018<br>
+         South Africa.</p>
+    </div>
+
+    <div class="rg-footer-col">
+      <h3>Contacts</h3>
+      <p>Phone: <a href="tel:+27115814800">(011) 581 4800</a></p>
+      <p>Fax: (011) 581 4903</p>
+      <p>Email: <a href="mailto:info@ggb.org.za">info@ggb.org.za</a></p>
+    </div>
+
+    <div class="rg-footer-col">
+      <h3>Find Us On Social Media</h3>
+      <div class="rg-social">
+        <a href="https://www.facebook.com/gautenggambling" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://x.com/gautenggambling" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/watch?v=8fKcxaoPlRQ" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/gautenggambling/" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+  <p class="rg-footer-bottom">&copy; 2026 Gauteng Gambling Board. All Rights Reserved. &middot; <a href="contact.html">Report illegal gambling</a></p>
+</footer>
+
+<a class="rg-float-help" href="tel:0800006008">
+  Need help? Call 0800 006 008
+</a>
+
+<script src="script.js"></script>
+<script>
+    // Mobile menu toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', open);
+    });
+</script>
+</body>
+</html>
