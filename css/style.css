@@ -2683,7 +2683,7 @@ color:#f4d47c;
 }
 
 .tenders-page .announcements {
-  padding: 64px 24px;
+  padding: 32px 24px 64px;
   background: #fff;
 }
 
@@ -2808,6 +2808,10 @@ color:#f4d47c;
     padding: 48px 20px;
   }
 
+  .tenders-page .announcements {
+    padding-top: 24px;
+  }
+
   .tenders-page .announcement-grid {
     grid-template-columns: 1fr;
   }
@@ -2833,7 +2837,7 @@ color:#f4d47c;
 ============================================================= */
 
 .td-hero {
-  padding: 64px 0;
+  padding: 64px 0 0;
   background: #fff;
 }
 
@@ -2876,6 +2880,7 @@ color:#f4d47c;
 .td-pic img {
   display: block;
   width: 100%;
+
   height: 100%;
   object-fit: contain;
   object-position: center;
@@ -2884,7 +2889,7 @@ color:#f4d47c;
 /* ---------- Tablets and phones ---------- */
 @media (max-width: 860px) {
   .td-hero {
-    padding: 44px 0;
+    padding: 44px 0 0;
   }
 
   .td-pic {
