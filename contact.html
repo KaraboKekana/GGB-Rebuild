@@ -117,11 +117,10 @@
       <div class="ct-formwrap">
         <h2>Send us a message</h2>
 
-        <!-- To make this form really send emails, put your form service address
-             in data-endpoint (see the instructions). Until then it is a demo. -->
+        <!-- Form submissions are sent securely through the Board's Formspree endpoint. -->
         <form id="contactForm" class="ct-form"
-      action="https://formspree.io/f/mjywanyd"
-      method="POST">
+              action="https://formspree.io/f/mjywanyd"
+              method="POST">
 
           <div class="ct-row">
             <div class="ct-field">
@@ -405,8 +404,6 @@
 
       var url = form.getAttribute('action');
 
-      /* No service connected yet: be honest about it */
-      
       status.textContent = 'Sending...';
 
       fetch(url, {
